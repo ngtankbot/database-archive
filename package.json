@@ -1,8 +1,10 @@
 {
   "name": "@dbotng/database",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
-  "main": "index.js",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "prepare": "npx prisma generate && tsc && cp ./src/index.d.ts ./dist/index.d.ts"
   },
