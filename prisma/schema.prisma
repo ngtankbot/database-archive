@@ -1,0 +1,29 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model servers {
+  id       BigInt @id
+  settings Json   @default("{\"cooldown\": {\"time\": 5, \"commands\": [\"audio_play\", \"audio_leave\"]}}")
+}
+
+model discordUser {
+  id             BigInt           @id
+  username       String
+  discriminator  String
+  newgroundsUser newgroundsUser[]
+}
+
+model newgroundsUser {
+  id          BigInt        @id
+  name        String        @unique
+  supporter   Boolean
+  icons       Json
+  discordUser discordUser[]
+}

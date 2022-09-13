@@ -1,0 +1,22 @@
+{
+  "name": "@dbotng/database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "npx prisma generate && tsc && cp ./src/index.d.ts ./dist/index.d.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "LGPL-3.0-or-later",
+  "publishConfig": {
+    "@dbotng:registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.3.1"
+  },
+  "devDependencies": {
+    "prisma": "^4.3.1",
+    "typescript": "^4.8.3"
+  }
+}
